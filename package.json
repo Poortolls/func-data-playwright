@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "lint-staged": {
+    "*.{json,md,ts}": [
+      "prettier --write"
+    ],
+    "*.{ts}": "eslint --fix"
+  },
+  "dependencies": {
+    "@types/node": "^20.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsdoc": "^46.4.6",
+    "eslint-plugin-playwright": "^0.15.3",
+    "eslint-plugin-prettier": "^5.0.0",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --retries 0 --project=chromium",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lintF": "eslint \"src/**/*.ts\" --fix",
+    "postinstall": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1"
+  }
+}
